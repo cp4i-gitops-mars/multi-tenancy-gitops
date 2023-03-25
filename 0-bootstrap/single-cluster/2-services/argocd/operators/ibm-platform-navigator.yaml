@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ibm-platform-navigator
+  name: ibm-integration-platform-navigator
   annotations:
     argocd.argoproj.io/sync-wave: "220"
   labels:
@@ -19,12 +19,12 @@ spec:
     path: operators/ibm-platform-navigator
     helm:
       values: |
-        ibm-platform-navigator:
+        ibm-integration-platform-navigator:
           subscriptions:
             platformnavigator:
-              name: ibm-platform-navigator
+              name: ibm-integration-platform-navigator
               subscription:
-                channel: v5.3
+                channel: v7.0
                 installPlanApproval: Automatic
                 name: ibm-integration-platform-navigator
                 source: ibm-operator-catalog
